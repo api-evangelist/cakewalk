@@ -1,0 +1,52 @@
+generated: '2026-07-18'
+method: searched
+source: https://www.cakewalk.security/docs/open-api-and-mcp/authentication
+docs: https://www.cakewalk.security/docs/open-api-and-mcp/authentication
+summary:
+  types: [apiKey, oauth2]
+  api_key_in: [header]
+  oauth2_flows: [authorizationCode]
+  notes: >-
+    The Cakewalk Open REST API authenticates with a paired API key + API secret
+    sent as HTTP headers. The hosted Cakewalk MCP server authenticates with
+    OAuth (authorization code, Dynamic Client Registration) and issues
+    scoped access tokens.
+schemes:
+- name: X-API-KEY
+  type: apiKey
+  in: header
+  parameter: X-API-KEY
+  description: >-
+    Public API key identifying the caller. Issued from the keys table in
+    developer settings. Sent on every REST request.
+  applies_to: rest
+  sources: [https://www.cakewalk.security/docs/open-api-and-mcp/authentication]
+- name: X-API-SECRET
+  type: apiKey
+  in: header
+  parameter: X-API-SECRET
+  description: >-
+    Secret paired with the API key, used for request integrity verification.
+    Keys are issued with an access level of read-and-write (default) or
+    read-only. Sent on every REST request alongside X-API-KEY.
+  applies_to: rest
+  sources: [https://www.cakewalk.security/docs/open-api-and-mcp/authentication]
+- name: OAuth2
+  type: oauth2
+  description: >-
+    OAuth authorization used by the hosted Cakewalk MCP server
+    (https://mcp.getcakewalk.io/mcp). Clients register via OAuth Dynamic Client
+    Registration and approve scopes during authorization; the granted scopes
+    determine which MCP tools are available.
+  applies_to: mcp
+  flows:
+  - flow: authorizationCode
+    scopes:
+    - mcp:users.read
+    - mcp:workapps.read
+    - mcp:requests.read
+    - mcp:requests.write
+  sources: [https://www.cakewalk.security/docs/open-api-and-mcp/introduction-to-mcp/connect-an-mcp-client]
+key_access_levels:
+- read-and-write
+- read-only
