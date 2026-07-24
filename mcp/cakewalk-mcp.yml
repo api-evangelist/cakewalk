@@ -1,0 +1,64 @@
+generated: '2026-07-18'
+method: searched
+status: published
+source: https://www.cakewalk.security/docs/open-api-and-mcp/introduction-to-mcp
+server:
+  name: cakewalk-mcp
+  transport: http
+  url: https://mcp.getcakewalk.io/mcp
+  auth: oauth
+  auth_notes: >-
+    OAuth authorization with Dynamic Client Registration. During authorization
+    the client approves scopes (mcp:users.read, mcp:workapps.read,
+    mcp:requests.read, mcp:requests.write) that determine which tools are
+    available. Supported across Claude, Cursor, ChatGPT, Codex, VS Code, and
+    many other MCP clients.
+  install:
+    claude_code: claude mcp add --transport http cakewalk-mcp https://mcp.getcakewalk.io/mcp
+  docs:
+    overview: https://www.cakewalk.security/docs/open-api-and-mcp/introduction-to-mcp
+    connect: https://www.cakewalk.security/docs/open-api-and-mcp/introduction-to-mcp/connect-an-mcp-client
+    tool_reference: https://www.cakewalk.security/docs/open-api-and-mcp/introduction-to-mcp/mcp-tool-reference
+tools:
+- name: GetMyUserInformation
+  scope: mcp:users.read
+  description: Retrieve the profile and access details of the currently authenticated user.
+- name: GetUserInformation
+  scope: mcp:users.read
+  description: Look up a user's profile by user ID.
+- name: GetUserByEmail
+  scope: mcp:users.read
+  description: Look up a user's profile using their email address.
+- name: ListAllUsers
+  scope: mcp:users.read
+  description: List all users in the organization.
+- name: ListUserAccessesByEmails
+  scope: mcp:users.read
+  description: Check which apps specific users can access via email lookup.
+- name: ListUsersByWorkAppIds
+  scope: mcp:users.read
+  description: Identify all users with access to particular applications.
+- name: ListManagedWorkApps
+  scope: mcp:workapps.read
+  description: List all apps you manage or have owner responsibility for.
+- name: SearchTemplatesOrWorkAppsByName
+  scope: mcp:workapps.read
+  description: Find apps in the catalog using fuzzy name matching.
+- name: GetWorkAppPermissionLevels
+  scope: mcp:workapps.read
+  description: Retrieve permission tiers (Viewer, Editor, Admin) for an app.
+- name: GetWorkAppCustomFields
+  scope: mcp:workapps.read
+  description: Retrieve custom metadata field definitions attached to work apps.
+- name: ListRecentRequests
+  scope: mcp:requests.read
+  description: List the most recent access requests across all apps.
+- name: SearchOpenRequests
+  scope: mcp:requests.read
+  description: Find pending access requests awaiting approval.
+notes: >-
+  Cakewalk publishes two distinct MCP surfaces. (1) This developer MCP server
+  (mcp.getcakewalk.io/mcp) exposes read tools over the Cakewalk Open API for AI
+  assistants. (2) Separately, the Cakewalk product itself is an MCP Gateway that
+  governs and proxies AI agents' tool calls to third-party apps (Slack, Google,
+  Salesforce, GitLab, etc.) with runtime policy evaluation and audit logging.

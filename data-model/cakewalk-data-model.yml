@@ -1,0 +1,94 @@
+generated: '2026-07-18'
+method: searched
+source: https://www.cakewalk.security/docs/concepts/data-models
+docs:
+  data_models: https://www.cakewalk.security/docs/concepts/data-models
+  api_reference: https://www.cakewalk.security/docs/open-api-and-mcp/api-reference
+entities:
+- name: User
+  description: A human identity in the organization's SaaS ecosystem (source of truth in the User Directory).
+  id: userId
+- name: NHI
+  description: Non-human identity (service accounts, agents), tracked separately from users.
+- name: UsersGroup
+  description: A group of users forming the basis of role-based access control (RBAC).
+  id: usersGroupId
+- name: WorkApp
+  description: An application used across the organization; the unit that access is granted to.
+  id: workAppId
+- name: Access
+  description: A grant linking a user to a work app (optionally at a permission level).
+- name: PermissionLevel
+  description: A permission tier within a work app (e.g. Viewer, Editor, Admin).
+  id: permissionLevelId
+- name: CustomField
+  description: Custom metadata field definition attached to a work app.
+- name: Policy
+  description: Governance rule that routes access requests and tasks (approvers, sequence, conditions).
+- name: Request
+  description: A user action to obtain, change, or remove app access; subject to approval policies.
+  id: requestId
+- name: Task
+  description: An action an approver must take to complete a request.
+  id: taskId
+- name: AccessReview
+  description: A structured campaign to review and certify access to apps.
+relationships:
+- from: UsersGroup
+  to: User
+  type: has_many
+  via: Users
+  evidence: GET/POST/DELETE /UsersGroups/{usersGroupId}/Users
+- from: UsersGroup
+  to: WorkApp
+  type: has_many
+  via: DefaultWorkApps / HiddenWorkApps
+  evidence: GET /UsersGroups/{usersGroupId}/DefaultWorkApps and /HiddenWorkApps
+- from: WorkApp
+  to: Access
+  type: has_many
+  via: Accesses
+  evidence: GET /WorkApps/{workAppId}/Accesses
+- from: WorkApp
+  to: PermissionLevel
+  type: has_many
+  via: PermissionLevels
+  evidence: GET /WorkApps/{workAppId}/PermissionLevels
+- from: WorkApp
+  to: CustomField
+  type: has_many
+  via: CustomFields
+  evidence: GET/PATCH /WorkApps/{workAppId}/CustomFields
+- from: WorkApp
+  to: Policy
+  type: has_many
+  via: Policies
+  evidence: PUT /WorkApps/{workAppId}/Policies/{requestType}
+- from: Request
+  to: User
+  type: belongs_to
+  via: targetUserId / createdByUserId
+  evidence: POST /Requests/GrantAccess body fields
+- from: Request
+  to: WorkApp
+  type: belongs_to
+  via: workAppId
+  evidence: POST /Requests/GrantAccess body fields
+- from: Request
+  to: PermissionLevel
+  type: has_one
+  via: permissionLevelId
+  evidence: POST /Requests/GrantAccess optional field
+- from: Task
+  to: Request
+  type: belongs_to
+  via: request
+  evidence: Tasks are created when a request needs approver input.
+- from: Access
+  to: User
+  type: belongs_to
+  via: userId
+- from: Access
+  to: WorkApp
+  type: belongs_to
+  via: workAppId

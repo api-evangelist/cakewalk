@@ -1,0 +1,35 @@
+generated: '2026-07-18'
+method: searched
+source: https://www.cakewalk.security/docs/open-api-and-mcp/introduction-to-mcp/mcp-tool-reference
+docs: https://www.cakewalk.security/docs/open-api-and-mcp/introduction-to-mcp/mcp-tool-reference
+notes: >-
+  OAuth scopes apply to the hosted Cakewalk MCP server
+  (https://mcp.getcakewalk.io/mcp). Scopes are approved during the OAuth
+  authorization flow and gate which MCP tools an agent can call. The REST Open
+  API itself authenticates with X-API-KEY / X-API-SECRET headers (see
+  authentication/cakewalk-authentication.yml) and has no OAuth scopes.
+schemes:
+- name: OAuth2
+  source: https://www.cakewalk.security/docs/open-api-and-mcp/introduction-to-mcp
+  flows:
+  - flow: authorizationCode
+    server: https://mcp.getcakewalk.io/mcp
+scopes:
+- scope: mcp:users.read
+  description: Read user profiles, directory, and access details via MCP user tools.
+  flows: [authorizationCode]
+  sources: [https://www.cakewalk.security/docs/open-api-and-mcp/introduction-to-mcp/mcp-tool-reference]
+- scope: mcp:workapps.read
+  description: Read managed work apps, permission levels, and custom fields via MCP app tools.
+  flows: [authorizationCode]
+  sources: [https://www.cakewalk.security/docs/open-api-and-mcp/introduction-to-mcp/mcp-tool-reference]
+- scope: mcp:requests.read
+  description: Read recent and open access requests via MCP request tools.
+  flows: [authorizationCode]
+  sources: [https://www.cakewalk.security/docs/open-api-and-mcp/introduction-to-mcp/mcp-tool-reference]
+- scope: mcp:requests.write
+  description: >-
+    Create or modify access requests via MCP request tools. Reserved for
+    write-capable request tools during MCP authorization.
+  flows: [authorizationCode]
+  sources: [https://www.cakewalk.security/docs/open-api-and-mcp/introduction-to-mcp/mcp-tool-reference]

@@ -1,0 +1,11 @@
+generated: '2026-07-18'
+method: searched
+source: https://www.cakewalk.security/docs/open-api-and-mcp/rate-limits
+docs: https://www.cakewalk.security/docs/open-api-and-mcp/rate-limits
+rate_limits:
+- scope: global
+  limit_count: 1000
+  window: minute
+  description: >-
+    The Cakewalk Open API enforces a rate limit of 1,000 requests per minute to
+    ensure fair usage and system stability. Exceeding the limit returns HTTP 429.

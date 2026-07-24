@@ -1,0 +1,20 @@
+generated: '2026-07-18'
+method: searched
+source: https://www.cakewalk.security/docs/open-api-and-mcp
+versioning:
+  scheme: uri-path
+  current: v1
+  docs: https://www.cakewalk.security/docs/open-api-and-mcp/getting-started
+deprecation:
+  policy_url: null
+  sunset_header: false
+  notes: No public deprecation policy or RFC 8594 Sunset/Deprecation header support was found in the docs.
+sla:
+  url: null
+  uptime_target: null
+  notes: No public SLA / uptime commitment was found.
+status_page: null
+status_page_notes: >-
+  No public status page (status.cakewalk.security / status.getcakewalk.io both
+  unresolved) was found at enrichment time.
+deprecated_operations: []

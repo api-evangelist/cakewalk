@@ -1,0 +1,40 @@
+generated: '2026-07-18'
+method: generated
+source: https://www.cakewalk.security/docs/open-api-and-mcp/api-reference
+notes: >-
+  Agent Skills generated from Cakewalk's documented Open API operations
+  (method + path from the public API reference; Cakewalk publishes no
+  machine-readable OpenAPI, so operations are grounded on documented endpoints).
+  Auth, pagination, rate-limit, and error rules come from conventions/ and errors/.
+skills:
+- file: cakewalk-grant-access.md
+  name: Grant a user access to an app
+  api: https://open-api.getcakewalk.io/api/v1
+  operations:
+  - 'POST /Requests/GrantAccess'
+  - 'GET /WorkApps'
+  - 'GET /WorkApps/{workAppId}/PermissionLevels'
+  - 'GET /Requests'
+- file: cakewalk-remove-access.md
+  name: Remove a user's access to an app
+  api: https://open-api.getcakewalk.io/api/v1
+  operations:
+  - 'POST /Requests/RemoveAccess'
+  - 'GET /WorkApps/{workAppId}/Accesses'
+  - 'GET /Requests'
+- file: cakewalk-review-and-approve-task.md
+  name: Review and approve or decline an access task
+  api: https://open-api.getcakewalk.io/api/v1
+  operations:
+  - 'GET /Tasks?userId={userId}'
+  - 'GET /Tasks/{taskId}'
+  - 'POST /Tasks/{taskId}/Approve'
+  - 'POST /Tasks/{taskId}/Decline'
+- file: cakewalk-audit-user-access.md
+  name: Audit which apps a user can access
+  api: https://open-api.getcakewalk.io/api/v1
+  operations:
+  - 'GET /users'
+  - 'GET /users/{id}'
+  - 'GET /WorkApps'
+  - 'GET /WorkApps/{workAppId}/Accesses'

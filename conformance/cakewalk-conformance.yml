@@ -1,0 +1,45 @@
+generated: '2026-07-18'
+method: searched
+source: https://www.cakewalk.security/docs
+standards:
+- id: oauth2
+  conforms: true
+  evidence: >-
+    Hosted MCP server (mcp.getcakewalk.io/mcp) uses OAuth authorization code with
+    Dynamic Client Registration and scoped tokens.
+- id: rfc7807-problem-details
+  conforms: true
+  evidence: API errors use the ProblemDetails schema (type/title/status/detail/instance).
+- id: rfc9457-problem-details
+  conforms: partial
+  evidence: >-
+    ProblemDetails follows the RFC 7807 shape (superseded by RFC 9457); served as
+    application/json rather than application/problem+json.
+- id: json-api-pagination
+  conforms: partial
+  evidence: >-
+    Cursor-based pagination inspired by JSON:API with data + links.self/links.next;
+    not a full JSON:API media type implementation.
+- id: api-key-auth
+  conforms: true
+  evidence: X-API-KEY + X-API-SECRET header authentication on the REST API.
+- id: webhook-signature-rsa
+  conforms: true
+  evidence: >-
+    Webhooks signed with SHA256withRSA (X-SIGNATURE header, base64); public key
+    published at open-api.getcakewalk.io/api/Keys.
+- id: rego-policy
+  conforms: true
+  evidence: MCP Gateway custom policies are authored in Rego (Open Policy Agent).
+- id: iso-27001
+  conforms: true
+  evidence: >-
+    ISO/IEC 27001:2022 certified; verified via the Drata Trust Center
+    (see security/cakewalk-trust-center.yml).
+- id: gdpr
+  conforms: true
+  evidence: GDPR compliance stated on cakewalk.security/security.
+- id: scim
+  conforms: false
+- id: fhir-r4
+  conforms: false

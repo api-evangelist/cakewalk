@@ -1,0 +1,55 @@
+generated: '2026-07-18'
+method: searched
+source: https://www.cakewalk.security/docs/open-api-and-mcp
+docs: https://www.cakewalk.security/docs/open-api-and-mcp/getting-started
+base_url: https://open-api.getcakewalk.io/api/v1
+authentication:
+  style: api-key-pair
+  headers: [X-API-KEY, X-API-SECRET]
+  ref: authentication/cakewalk-authentication.yml
+  docs: https://www.cakewalk.security/docs/open-api-and-mcp/authentication
+versioning:
+  scheme: uri-path
+  current: v1
+  example: https://open-api.getcakewalk.io/api/v1/users
+pagination:
+  style: cursor
+  inspired_by: JSON:API
+  request_param: page[cursor]
+  response_fields:
+    data: paginated resource array
+    links.self: URL for the current page
+    links.next: URL to the next page (null or absent at the end)
+  guidance: >-
+    Cursors are opaque server-provided strings; always follow links.next rather
+    than constructing cursor values. No prev link and no meta block are returned;
+    navigation is forward-only.
+  docs: https://www.cakewalk.security/docs/open-api-and-mcp/pagination
+rate_limiting:
+  limit: 1000
+  window: minute
+  ref: rate-limits/cakewalk-rate-limits.yml
+  docs: https://www.cakewalk.security/docs/open-api-and-mcp/rate-limits
+error_envelope:
+  format: rfc7807-problem-details
+  schema: ProblemDetails
+  fields: [type, title, status, detail, instance]
+  media_types: [application/json, text/json]
+  ref: errors/cakewalk-problem-types.yml
+idempotency:
+  supported: false
+  notes: >-
+    No idempotency-key header or parameter is documented for the Cakewalk Open
+    API. Write operations (Requests/GrantAccess, Requests/RemoveAccess,
+    Requests/ChangePermission, Tasks Approve/Decline) are not documented as
+    idempotent.
+webhooks:
+  supported: true
+  signature_header: X-SIGNATURE
+  signature_algorithm: SHA256withRSA (RSA PKCS1v15, base64-encoded)
+  public_key_endpoint: https://open-api.getcakewalk.io/api/Keys
+  ref: asyncapi/cakewalk-webhooks.yml
+  docs: https://www.cakewalk.security/docs/open-api-and-mcp/webhooks
+mcp:
+  server: https://mcp.getcakewalk.io/mcp
+  ref: mcp/cakewalk-mcp.yml

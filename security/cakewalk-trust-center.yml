@@ -1,0 +1,23 @@
+generated: '2026-07-18'
+method: searched
+probe: false
+source: https://www.cakewalk.security/docs/concepts/trust-and-security-model
+url: https://app.drata.com/trust/9cbc7f12-0c38-11ee-865f-029d78a187d9
+provider: Drata
+certifications:
+- ISO 27001:2022
+compliance:
+- GDPR
+posture:
+  encryption: Encryption at rest and in transit.
+  credential_protection: >-
+    Client-side encryption, isolated execution environments, and in-memory
+    decryption for credentials used by Agent Cake auto-provisioning.
+  readiness: Stated readiness for SOC 2 and ISO 42001.
+evidence:
+- source: https://www.cakewalk.security/docs/concepts/trust-and-security-model
+  keywords: [iso 27001:2022, trust center, encryption at rest and in transit]
+- source: https://www.cakewalk.security/security
+  keywords: [iso 27001:2022 certified, gdpr compliant]
+- source: https://app.drata.com/trust/9cbc7f12-0c38-11ee-865f-029d78a187d9
+  keywords: [drata trust center]

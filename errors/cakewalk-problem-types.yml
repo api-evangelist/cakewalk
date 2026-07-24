@@ -1,0 +1,43 @@
+generated: '2026-07-18'
+method: searched
+source: https://www.cakewalk.security/docs/open-api-and-mcp/api-reference
+format: rfc7807
+envelope:
+  schema: ProblemDetails
+  fields: [type, title, status, detail, instance]
+  media_types: [application/json, text/json]
+  notes: >-
+    Cakewalk Open API errors use the RFC 7807 ProblemDetails shape (type, title,
+    status, detail, instance). Documented on the write endpoints (e.g.
+    POST /Requests/GrantAccess) which return ProblemDetails on 400/401/403/409.
+    Live 404 responses observed on the API host carry a type of
+    https://httpstatuses.io/<code>, consistent with the same problem-details model.
+problems:
+- status: 400
+  title: Bad Request
+  type: https://httpstatuses.io/400
+  description: Request validation failed (e.g. missing or malformed body fields).
+- status: 401
+  title: Unauthorized
+  type: https://httpstatuses.io/401
+  description: Missing or invalid X-API-KEY / X-API-SECRET credentials.
+- status: 403
+  title: Forbidden
+  type: https://httpstatuses.io/403
+  description: Authenticated caller lacks permission for the operation (e.g. read-only key attempting a write).
+- status: 404
+  title: Not Found
+  type: https://httpstatuses.io/404
+  description: Referenced resource (user, work app, request, task) does not exist.
+- status: 409
+  title: Conflict
+  type: https://httpstatuses.io/409
+  description: Request conflicts with current state (e.g. duplicate or incompatible access request).
+- status: 429
+  title: Too Many Requests
+  type: https://httpstatuses.io/429
+  description: Rate limit of 1,000 requests per minute exceeded.
+- status: 500
+  title: Internal Server Error
+  type: https://httpstatuses.io/500
+  description: Unexpected server error.

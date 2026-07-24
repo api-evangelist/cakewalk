@@ -1,20 +1,97 @@
 aid: cakewalk
 name: Cakewalk
-description: Cakewalk is a company surfaced as a portfolio company of seedcamp and added to the API Evangelist
-  network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Cakewalk is the agentic access management platform for fast-moving companies,
+  combining a granular identity governance and administration (IGA) platform
+  with AI-driven workflows. Cakewalk governs access for both human identities
+  and AI agents: its MCP Gateway routes every AI agent tool call through a
+  runtime policy engine with credential mediation, least-privilege enforcement,
+  and a complete audit trail, while its human access management handles
+  joiner-mover-leaver lifecycle, access requests, access reviews, and
+  auto-provisioning via its Agent Cake provisioning agent. The Cakewalk Open API
+  and hosted MCP server let developers manage users, groups, work apps,
+  accesses, requests, and tasks programmatically. Founded in 2022 and backed by
+  Seedcamp, Fly Ventures, and Possible Ventures.
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://www.getcakewalk.io/favicon-v2.png
 url: https://raw.githubusercontent.com/api-evangelist/cakewalk/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - seedcamp
-x-tier: stub
-x-tier-reason: portfolio-lead
+x-tier: profiled
+x-tier-reason: enrichment-pipeline
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-18'
 tags:
 - Company
-apis: []
+- Access Management
+- Identity Governance
+- IGA
+- AI Agents
+- Security
+- Access Control
+- MCP
+- Provisioning
+- SaaS Management
+- Authentication
+apis:
+- name: Cakewalk Open API
+  description: >-
+    The Cakewalk Open API is a REST API for building custom access-governance
+    workflows and integrations. It exposes users, user groups, work apps,
+    accesses, permission levels, requests, tasks, policies, and access reviews.
+    Authentication uses X-API-KEY and X-API-SECRET headers; responses use
+    cursor-based JSON:API-style pagination and RFC 7807 ProblemDetails errors,
+    with a 1,000 requests-per-minute rate limit. A hosted MCP server and signed
+    webhooks complete the developer surface.
+  humanURL: https://www.cakewalk.security/open-api
+  baseURL: https://open-api.getcakewalk.io/api/v1
+  tags:
+  - Access Management
+  - Identity Governance
+  - AI Agents
+  properties:
+  - type: Documentation
+    url: https://www.cakewalk.security/docs
+  - type: APIReference
+    url: https://www.cakewalk.security/docs/open-api-and-mcp/api-reference
+  - type: GettingStarted
+    url: https://www.cakewalk.security/docs/open-api-and-mcp/getting-started
+  - type: Authentication
+    url: authentication/cakewalk-authentication.yml
+  - type: OAuthScopes
+    url: scopes/cakewalk-scopes.yml
+  - type: ErrorCatalog
+    url: errors/cakewalk-problem-types.yml
+  - type: Conventions
+    url: conventions/cakewalk-conventions.yml
+  - type: DataModel
+    url: data-model/cakewalk-data-model.yml
+  - type: Lifecycle
+    url: lifecycle/cakewalk-lifecycle.yml
+  - type: Conformance
+    url: conformance/cakewalk-conformance.yml
+  - type: RateLimits
+    url: rate-limits/cakewalk-rate-limits.yml
+  - type: MCPServer
+    url: mcp/cakewalk-mcp.yml
+  - type: Webhooks
+    url: asyncapi/cakewalk-webhooks.yml
+  - type: LLMsTxt
+    url: llms/cakewalk-llms.txt
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -22,4 +99,61 @@ maintainers:
   email: info@apis.io
 common:
 - type: Website
-  url: http://getcakewalk.io
+  url: https://www.cakewalk.security/
+- type: DeveloperPortal
+  url: https://www.cakewalk.security/docs
+- type: Documentation
+  url: https://www.cakewalk.security/docs
+- type: APIReference
+  url: https://www.cakewalk.security/docs/open-api-and-mcp/api-reference
+- type: GettingStarted
+  url: https://www.cakewalk.security/docs/open-api-and-mcp/getting-started
+- type: Authentication
+  url: authentication/cakewalk-authentication.yml
+- type: OAuthScopes
+  url: scopes/cakewalk-scopes.yml
+- type: MCPServer
+  url: mcp/cakewalk-mcp.yml
+- type: ErrorCatalog
+  url: errors/cakewalk-problem-types.yml
+- type: Conventions
+  url: conventions/cakewalk-conventions.yml
+- type: DataModel
+  url: data-model/cakewalk-data-model.yml
+- type: Lifecycle
+  url: lifecycle/cakewalk-lifecycle.yml
+- type: Conformance
+  url: conformance/cakewalk-conformance.yml
+- type: Compliance
+  url: security/cakewalk-trust-center.yml
+- type: TrustCenter
+  url: security/cakewalk-trust-center.yml
+- type: RateLimits
+  url: rate-limits/cakewalk-rate-limits.yml
+- type: Webhooks
+  url: asyncapi/cakewalk-webhooks.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: LLMsTxt
+  url: llms/cakewalk-llms.txt
+- type: DomainSecurity
+  url: security/cakewalk-domain-security.yml
+- type: Blog
+  url: https://www.cakewalk.security/resources
+- type: GitHubOrganization
+  url: https://github.com/cakewalk-security
+- type: PrivacyPolicy
+  url: https://www.cakewalk.security/privacy-policy
+- type: SignUp
+  url: https://www.cakewalk.security/book-demo
+- type: Login
+  url: https://app.getcakewalk.io/
+- type: LinkedIn
+  url: https://www.linkedin.com/company/cakewalk-security/
+- type: YouTube
+  url: https://www.youtube.com/@getcakewalk
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence
