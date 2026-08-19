@@ -7,12 +7,10 @@ server:
   transport: http
   url: https://mcp.getcakewalk.io/mcp
   auth: oauth
-  auth_notes: >-
-    OAuth authorization with Dynamic Client Registration. During authorization
-    the client approves scopes (mcp:users.read, mcp:workapps.read,
-    mcp:requests.read, mcp:requests.write) that determine which tools are
-    available. Supported across Claude, Cursor, ChatGPT, Codex, VS Code, and
-    many other MCP clients.
+  auth_notes: OAuth authorization with Dynamic Client Registration. During authorization the client approves
+    scopes (mcp:users.read, mcp:workapps.read, mcp:requests.read, mcp:requests.write) that determine which
+    tools are available. Supported across Claude, Cursor, ChatGPT, Codex, VS Code, and many other MCP
+    clients.
   install:
     claude_code: claude mcp add --transport http cakewalk-mcp https://mcp.getcakewalk.io/mcp
   docs:
@@ -56,9 +54,14 @@ tools:
 - name: SearchOpenRequests
   scope: mcp:requests.read
   description: Find pending access requests awaiting approval.
-notes: >-
-  Cakewalk publishes two distinct MCP surfaces. (1) This developer MCP server
-  (mcp.getcakewalk.io/mcp) exposes read tools over the Cakewalk Open API for AI
-  assistants. (2) Separately, the Cakewalk product itself is an MCP Gateway that
-  governs and proxies AI agents' tool calls to third-party apps (Slack, Google,
-  Salesforce, GitLab, etc.) with runtime policy evaluation and audit logging.
+notes: Cakewalk publishes two distinct MCP surfaces. (1) This developer MCP server (mcp.getcakewalk.io/mcp)
+  exposes read tools over the Cakewalk Open API for AI assistants. (2) Separately, the Cakewalk product
+  itself is an MCP Gateway that governs and proxies AI agents' tool calls to third-party apps (Slack,
+  Google, Salesforce, GitLab, etc.) with runtime policy evaluation and audit logging.
+deployment:
+  mode: remote
+  endpoint: https://mcp.getcakewalk.io/mcp
+  verified: probed
+  probe: gated
+  checked: '2026-08-12'
+  source: catalog MCP census
