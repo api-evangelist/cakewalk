@@ -1,0 +1,1 @@
+{"resource":"https://mcp.getcakewalk.io/mcp","authorization_servers":["https://mcp.getcakewalk.io"],"bearer_methods_supported":["header"],"scopes_supported":["openid","profile","offline_access","mcp:users.read","mcp:users.write","mcp:workapps.read","mcp:workapps.write","mcp:requests.read","mcp:requests.write"]}
