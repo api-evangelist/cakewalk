@@ -65,3 +65,26 @@ deployment:
   probe: gated
   checked: '2026-08-12'
   source: catalog MCP census
+rfc9728:
+  endpoint: https://mcp.getcakewalk.io/mcp
+  metadata_url: http://mcp.getcakewalk.io/.well-known/oauth-protected-resource/mcp
+  discovered_via: WWW-Authenticate resource_metadata on an anonymous POST initialize
+  fetched: '2026-09-25'
+  http_status: 200
+  content_type: application/json
+  document:
+    resource: https://mcp.getcakewalk.io/mcp
+    authorization_servers:
+    - https://mcp.getcakewalk.io
+    scopes_supported:
+    - openid
+    - profile
+    - offline_access
+    - mcp:users.read
+    - mcp:users.write
+    - mcp:workapps.read
+    - mcp:workapps.write
+    - mcp:requests.read
+    - mcp:requests.write
+    bearer_methods_supported:
+    - header
