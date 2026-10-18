@@ -51,6 +51,17 @@ x-docs-platform-confidence: medium
 x-docs-platform-checked: 2026-09-21
 tags:
 - Company
+- Identity and Access Management
+- Identity Governance
+- AI Agents
+- Security
+- Access Control
+- MCP
+- Provisioning
+- SaaS Management
+- Authentication
+tags_raw:
+- Company
 - Access Management
 - Identity Governance
 - IGA
@@ -74,6 +85,10 @@ apis:
   humanURL: https://www.cakewalk.security/open-api
   baseURL: https://open-api.getcakewalk.io/api/v1
   tags:
+  - Identity and Access Management
+  - Identity Governance
+  - AI Agents
+  tags_raw:
   - Access Management
   - Identity Governance
   - AI Agents
