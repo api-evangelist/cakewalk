@@ -64,6 +64,118 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Cakewalk is a company surfaced as a portfolio company of seedcamp and added to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+Cakewalk is the agentic access management platform for fast-moving companies, combining a granular identity governance and administration (IGA) platform with AI-driven workflows. Cakewalk governs access for both human identities and AI agents: its MCP Gateway routes every AI agent tool call through a runtime policy engine with credential mediation, least-privilege enforcement, and a complete audit trail, while its human access management handles joiner-mover-leaver lifecycle, access requests, access reviews, and auto-provisioning via its Agent Cake provisioning agent. The Cakewalk Open API and hosted MCP server let developers manage users, groups, work apps, accesses, requests, and tasks programmatically. Founded in 2022 and backed by Seedcamp, Fly Ventures, and Possible Ventures.
 
-Backed by: seedcamp — http://getcakewalk.io
+**Areas:** Company · Identity and Access Management · Identity Governance · AI Agents · Security · Access Control · MCP · Provisioning · SaaS Management · Authentication
+
+## Cakewalk on APIs.io
+
+Everything profiled for Cakewalk is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/cakewalk/](https://apis.io/providers/cakewalk/)** — or go straight to one of the APIs or properties below.
+
+### APIs (1)
+
+- [Cakewalk Open API](https://apis.io/apis/cakewalk/cakewalk-open-api/) — The Cakewalk Open API is a REST API for building custom access-governance workflows and integrations. It exposes users, user groups, work apps, accesses,…
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### AsyncAPI (1)
+
+Event-driven and webhook contracts.
+
+- [Cakewalk Webhooks](https://apis.io/asyncapis/cakewalk/cakewalk-webhooks/)
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [cakewalk-mcp](https://apis.io/servers/cakewalk/cakewalk-mcp/)
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Cakewalk Authentication](https://apis.io/security/cakewalk/cakewalk-authentication/)
+- [Cakewalk Domain Security](https://apis.io/security/cakewalk/cakewalk-domain-security/)
+- [Cakewalk Trust Center](https://apis.io/security/cakewalk/cakewalk-trust-center/)
+
+#### OAuth scopes (1)
+
+The permissions the API asks for.
+
+- [Cakewalk Scopes](https://apis.io/scopes/cakewalk/cakewalk-scopes/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Cakewalk Rate Limits](https://apis.io/rate-limits/cakewalk/cakewalk-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.cakewalk.security/)
+- [Documentation](https://www.cakewalk.security/docs)
+- [Getting started](https://www.cakewalk.security/docs/open-api-and-mcp/getting-started)
+- [API reference](https://www.cakewalk.security/docs/open-api-and-mcp/api-reference)
+- [Sign up](https://www.cakewalk.security/book-demo)
+- [Blog](https://www.cakewalk.security/identity-governance-for-engineering-leaders)
+- [Privacy policy](https://www.cakewalk.security/privacy-policy)
+- [GitHub](https://github.com/cakewalk-security)
+
+## API Evangelist rating
+
+**Kin Score 41.5** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 75.0 |
+| Contract quality | 39.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 31.6 |
+| Developer ergonomics | 35.1 |
+| Access clarity | 39.5 |
+
+**Agent readiness 50.9** — agent-ready (gated down from agent-native)
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | verified |
+| Auth Clarity | served (partial credit) |
+| Idempotency | — |
+| Error Semantics | documented (partial credit) |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | yes |
+| Agent Skills | derived (partial credit) |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | served (partial credit) |
+| Protected Resource Metadata | verified |
+| Dynamic Client Registration | yes |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | na |
+
+**Regulatory alignment 35.3** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/cakewalk/](https://apis.io/providers/cakewalk/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Cakewalk: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/cakewalk/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
